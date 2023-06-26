@@ -1,0 +1,31 @@
+{
+  "name": "com.dyson",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "run": "homey app run",
+    "validate": "homey app validate --level=verified"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/athombv/com.dyson.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/athombv/com.dyson/issues"
+  },
+  "homepage": "https://github.com/athombv/com.dyson#readme",
+  "dependencies": {
+    "aws-mqtt": "^1.0.0",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "@tsconfig/node12": "^1.0.11",
+    "@types/homey": "npm:homey-apps-sdk-v3-types@^0.3.3",
+    "@types/node": "^18.11.18",
+    "eslint": "^7.22.0",
+    "eslint-config-athom": "^2.1.0"
+  }
+}

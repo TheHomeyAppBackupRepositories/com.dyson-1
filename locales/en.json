@@ -1,0 +1,4 @@
+{
+	"invalid_credentials": "Invalid email & password combination.",
+	"missing_client": "The device could not be found on the local network."
+}
