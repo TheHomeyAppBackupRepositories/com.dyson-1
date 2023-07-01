@@ -1,1 +1,1265 @@
-{"_comment":"This file is generated. Please edit .homeycompose/app.json instead.","id":"com.dyson","sdk":3,"name":{"en":"Dyson"},"brandColor":"#522A86","description":{"en":"Make It Your Cool Home","nl":"Make It Your Cool Home"},"category":"appliances","tags":{"en":["dyson","air multiplier","fan","vacuum"],"nl":["dyson","air multiplier","ventilator","stofzuiger"]},"version":"5.5.0","compatibility":">=5.0.0","author":{"name":"Athom B.V."},"permissions":["homey:wireless:ir"],"images":{"large":"/assets/images/large.png","small":"/assets/images/small.png"},"platforms":["local","cloud"],"support":"https://support.athom.com/hc/en-us/requests/new","flow":{"triggers":[{"id":"heuristic_vacuum_state_changed","title":{"en":"State changed","nl":"Status veranderd"},"tokens":[{"name":"heuristic_vacuum_state","type":"string","title":{"en":"State","nl":"Status"}}],"args":[{"type":"device","name":"device","filter":"driver_id=dyson_360_heuristic"}]},{"id":"heuristic_vacuum_power_mode_changed","title":{"en":"Power mode changed","nl":"Vermogensmodus veranderd"},"tokens":[{"name":"heuristic_vacuum_power_mode","type":"string","title":{"en":"Mode","nl":"Modus"}}],"args":[{"type":"device","name":"device","filter":"driver_id=dyson_360_heuristic"}]}],"actions":[{"id":"dyson_heuristic_abort","title":{"en":"Abort program","nl":"Beëindig programma"},"hint":{"en":"Stop the current cleaning operation.","nl":"Beëindig de huidige operatie."},"args":[{"type":"device","name":"device","filter":"driver_id=dyson_360_heuristic"}]},{"id":"dyson_heuristic_pause","title":{"en":"Pause program","nl":"Pauzeer programma"},"hint":{"en":"Pause the current cleaning operation.","nl":"Pauzeer de huidige operatie."},"args":[{"type":"device","name":"device","filter":"driver_id=dyson_360_heuristic"}]},{"id":"dyson_heuristic_resume","title":{"en":"Resume program","nl":"Hervat programma"},"hint":{"en":"Resume the current cleaning operation.","nl":"Hervat de huidige operatie."},"args":[{"type":"device","name":"device","filter":"driver_id=dyson_360_heuristic"}]},{"id":"dyson_heuristic_start_all","title":{"en":"Clean all zones","nl":"Reinig alle zones"},"args":[{"type":"device","name":"device","filter":"driver_id=dyson_360_heuristic"}]},{"id":"dyson_heuristic_set_default_power_mode","title":{"en":"Set default power mode to...","nl":"Zet standaard vermogensmodus op..."},"titleFormatted":{"en":"Set default power mode to [[mode]]","nl":"Zet standaard vermogensmodus op [[mode]]"},"args":[{"type":"device","name":"device","filter":"driver_id=dyson_360_heuristic"},{"name":"mode","title":{"en":"Mode","nl":"Modus"},"type":"dropdown","values":[{"id":"quiet","label":{"en":"Quiet","nl":"Stil"}},{"id":"high","label":{"en":"High","nl":"Hoog"}},{"id":"max","label":{"en":"Max","nl":"Max"}}]}]},{"id":"dyson_am_oscillate","title":{"en":"Toggle oscillation","nl":"Schakel draaien aan of uit"},"args":[{"type":"device","name":"device","filter":"driver_id=dyson_am"}]},{"id":"dyson_am_more_air","title":{"en":"Increase air speed","nl":"Verhoog luchtsnelheid"},"titleFormatted":{"en":"Increase air speed by [[amount]] steps","nl":"Verhoog luchtsnelheid met [[amount]] stappen"},"args":[{"type":"device","name":"device","filter":"driver_id=dyson_am"},{"name":"amount","title":{"en":"Amount","nl":"Aantal"},"type":"number","min":1,"max":10,"step":1,"placeholder":{"en":"Steps","nl":"Standen"}}]},{"id":"dyson_am_less_air","title":{"en":"Decrease air speed","nl":"Verlaag luchtsnelheid"},"titleFormatted":{"en":"Decrease air speed by [[amount]] steps","nl":"Verlaag luchtsnelheid met [[amount]] stappen"},"args":[{"type":"device","name":"device","filter":"driver_id=dyson_am"},{"name":"amount","title":{"en":"Amount","nl":"Aantal"},"type":"number","min":1,"max":10,"step":1,"placeholder":{"en":"Steps","nl":"Standen"}}]},{"id":"dyson_link_oscillate_true","title":{"en":"Turn oscillation on","nl":"Zet draaien aan"},"args":[{"type":"device","name":"device","filter":"driver_id=dyson_link_fan"}]},{"id":"dyson_link_oscillate_false","title":{"en":"Turn oscillation off","nl":"Zet draaien uit"},"args":[{"type":"device","name":"device","filter":"driver_id=dyson_link_fan"}]},{"id":"dyson_link_auto_true","title":{"en":"Turn auto-mode on","nl":"Zet auto-modus aan"},"args":[{"type":"device","name":"device","filter":"driver_id=dyson_link_fan"}]},{"id":"dyson_link_auto_false","title":{"en":"Turn auto-mode off","nl":"Zet auto-modus uit"},"args":[{"type":"device","name":"device","filter":"driver_id=dyson_link_fan"}]},{"id":"dyson_link_airflow_direction","title":{"en":"Set airflow direction","nl":"Zet luchtrichting"},"titleFormatted":{"en":"Set airflow direction to [[airflow_direction]]","nl":"Zet luchtrichting naar [[airflow_direction]]"},"args":[{"type":"device","name":"device","filter":"driver_id=dyson_link_fan"},{"name":"airflow_direction","type":"dropdown","title":{"en":"Airflow direction","nl":"Luchtrichting"},"values":[{"id":"FORWARD","label":{"en":"Forward","nl":"Naar voren"}},{"id":"BACKWARD","label":{"en":"Backward","nl":"Naar achteren"}}]}]},{"id":"dyson_link_fan_speed","title":{"en":"Set fan speed","nl":"Zet snelheid"},"titleFormatted":{"en":"Set fan speed to [[fan_speed]]","nl":"Zet snelheid naar [[fan_speed]]"},"args":[{"type":"device","name":"device","filter":"driver_id=dyson_link_fan"},{"name":"fan_speed","type":"range","title":{"en":"Speed","nl":"Snelheid"},"min":1,"max":10,"step":1,"label":"%","labelDecimals":0,"labelMultiplier":10}]},{"id":"dyson_link_night_mode_true","title":{"en":"Turn night mode on","nl":"Zet nachtstand aan"},"args":[{"type":"device","name":"device","filter":"driver_id=dyson_link_fan"}]},{"id":"dyson_link_night_mode_false","title":{"en":"Turn night mode off","nl":"Zet nachtstand uit"},"args":[{"type":"device","name":"device","filter":"driver_id=dyson_link_fan"}]},{"id":"dyson_link_sleep_timer","title":{"en":"Set timer","nl":"Zet timer"},"titleFormatted":{"en":"Set timer for [[time]]","nl":"Zet timer voor [[time]]"},"hint":{"en":"This will turn of the device after the timer expires.","nl":"Hiermee schakelt het apparaat zichzelf uit nadat de timer is afgelopen."},"args":[{"type":"device","name":"device","filter":"driver_id=dyson_link_fan"},{"type":"dropdown","name":"time","title":{"en":"Timer"},"values":[{"id":"15","label":{"en":"15 minutes","nl":"15 minuten"}},{"id":"30","label":{"en":"30 minutes","nl":"30 minuten"}},{"id":"45","label":{"en":"45 minutes","nl":"45 minuten"}},{"id":"60","label":{"en":"1 hour","nl":"1 uur"}},{"id":"120","label":{"en":"2 hours","nl":"2 uur"}},{"id":"180","label":{"en":"3 hours","nl":"3 uur"}},{"id":"240","label":{"en":"4 hours","nl":"4 uur"}},{"id":"300","label":{"en":"5 hours","nl":"5 uur"}},{"id":"360","label":{"en":"6 hours","nl":"6 uur"}},{"id":"420","label":{"en":"7 hours","nl":"7 uur"}},{"id":"480","label":{"en":"8 hours","nl":"8 uur"}},{"id":"540","label":{"en":"9 hours","nl":"9 uur"}}]}]}]},"drivers":[{"name":{"en":"Dyson 360 Heuristic"},"class":"vacuumcleaner","platforms":["local","cloud"],"capabilities":["measure_battery","vacuum_charging","vacuum_program_state","heuristic_vacuum_state","heuristic_vacuum_power_mode","heuristic_vacuum_pause","heuristic_vacuum_resume","heuristic_vacuum_clean_all","heuristic_vacuum_abort"],"energy":{"batteries":["INTERNAL"]},"images":{"large":"/drivers/dyson_360_heuristic/assets/images/large.jpg","small":"/drivers/dyson_360_heuristic/assets/images/small.jpg"},"connectivity":["cloud"],"pair":[{"id":"login_credentials","template":"login_credentials","options":{"logo":"logo.png"}},{"id":"pincode","template":"pincode","options":{"length":6,"type":"number","title":{"en":"Enter your 2FA code. This can usually be found in your e-mail."}}},{"id":"list_devices","template":"list_devices","navigation":{"next":"add_devices"}},{"id":"add_devices","template":"add_devices"}],"repair":[{"id":"login_credentials","template":"login_credentials","options":{"logo":"logo.png"}},{"id":"pincode","template":"pincode","options":{"length":6,"type":"number","title":{"en":"Enter your 2FA code. This can usually be found in your e-mail."}}},{"id":"done","template":"done"}],"id":"dyson_360_heuristic","settings":[{"id":"default_power_mode","type":"dropdown","value":"quiet","label":{"en":"Default power mode","nl":"Standaard vermogensmodus"},"values":[{"id":"quiet","label":{"en":"Quiet","nl":"Stil"}},{"id":"high","label":{"en":"High","nl":"Hoog"}},{"id":"max","label":{"en":"Max","nl":"Max"}}]}]},{"name":{"en":"Dyson Cool","nl":"Dyson Cool"},"class":"fan","capabilities":["onoff","oscillate","more_air","less_air"],"connectivity":["infrared"],"pair":[{"id":"add"}],"images":{"large":"/drivers/dyson_am/assets/images/large.jpg","small":"/drivers/dyson_am/assets/images/small.jpg"},"platforms":["local","cloud"],"id":"dyson_am"},{"name":{"en":"Dyson Link"},"class":"fan","platforms":["local","cloud"],"capabilities":["onoff","oscillate","auto","fan_speed","measure_temperature","measure_humidity","night_mode"],"images":{"large":"/drivers/dyson_link_fan/assets/images/large.jpg","small":"/drivers/dyson_link_fan/assets/images/small.jpg"},"connectivity":["cloud"],"pair":[{"id":"login_credentials","template":"login_credentials","options":{"logo":"logo.png"}},{"id":"pincode","template":"pincode","options":{"length":6,"type":"number","title":{"en":"Enter your 2FA code. This can usually be found in your e-mail."}}},{"id":"list_devices","template":"list_devices","navigation":{"next":"add_devices"}},{"id":"add_devices","template":"add_devices"}],"repair":[{"id":"login_credentials","template":"login_credentials","options":{"logo":"logo.png"}},{"id":"pincode","template":"pincode","options":{"length":6,"type":"number","title":{"en":"Enter your 2FA code. This can usually be found in your e-mail."}}},{"id":"done","template":"done"}],"id":"dyson_link_fan"}],"capabilities":{"airflow_direction":{"type":"enum","title":{"en":"Airflow direction","nl":"Richting"},"getable":true,"setable":true,"uiComponent":"picker","values":[{"id":"FORWARD","title":{"en":"Forward","nl":"Naar voren"}},{"id":"BACKWARD","title":{"en":"Backward","nl":"Naar achteren"}}]},"auto":{"type":"boolean","title":{"en":"Auto","nl":"Auto"},"getable":true,"setable":true,"uiComponent":"button"},"fan_speed":{"title":{"en":"Fan Speed","nl":"Snelheid"},"setable":true,"getable":true,"type":"number","min":1,"max":10,"step":1,"uiComponent":"slider","insights":false},"heuristic_vacuum_abort":{"type":"boolean","getable":false,"setable":true,"uiComponent":"button","title":{"en":"Abort program","nl":"Beeïndig programma"},"uiQuickAction":true},"heuristic_vacuum_clean_all":{"type":"boolean","getable":false,"setable":true,"uiComponent":"button","title":{"en":"Clean all zones","nl":"Reinig alle zones"},"uiQuickAction":true},"heuristic_vacuum_pause":{"type":"boolean","getable":false,"setable":true,"uiComponent":"button","title":{"en":"Pause program","nl":"Pauzeer programma"},"uiQuickAction":true},"heuristic_vacuum_power_mode":{"type":"enum","getable":true,"setable":false,"uiComponent":"sensor","icon":"/assets/capabilities/vacuum-power-mode.svg","title":{"en":"Vacuum power mode","nl":"Vermogensmodus"},"values":[{"id":"quiet","title":{"en":"Quiet","nl":"Stil"}},{"id":"high","title":{"en":"High","nl":"Hoog"}},{"id":"max","title":{"en":"Max","nl":"Max"}}]},"heuristic_vacuum_resume":{"type":"boolean","getable":false,"setable":true,"uiComponent":"button","title":{"en":"Resume program","nl":"Hervat programma"},"uiQuickAction":true},"heuristic_vacuum_state":{"type":"enum","getable":true,"setable":false,"uiComponent":"sensor","icon":"/assets/capabilities/vacuum-cleaner-state.svg","title":{"en":"Vacuum cleaner state","nl":"Stofzuigerstatus"},"values":[{"id":"FAULT_CALL_HELPLINE","title":{"en":"Fault - call helpline","nl":"Fout - bel hulplijn"}},{"id":"FAULT_CONTACT_HELPLINE","title":{"en":"Fault - contact helpline","nl":"Fout - neem contact op met de hulplijn"}},{"id":"FAULT_CRITICAL","title":{"en":"Critical fault","nl":"Kritieke fout"}},{"id":"FAULT_GETTING_INFO","title":{"en":"Fault getting info","nl":"Fout bij ophalen informatie"}},{"id":"FAULT_LOST","title":{"en":"Fault - lost","nl":"Fout - verloren"}},{"id":"FAULT_ON_DOCK","title":{"en":"Fault on dock","nl":"Fout op dockingstation"}},{"id":"FAULT_ON_DOCK_CHARGED","title":{"en":"Fault on dock, charged","nl":"Fout op dockingstation, opgeladen"}},{"id":"FAULT_ON_DOCK_CHARGING","title":{"en":"Fault on dock, charging","nl":"Fout op dockingstation, aan het opladen"}},{"id":"FAULT_REPLACE_ON_DOCK","title":{"en":"Fault - replace on dock","nl":"Fout - vervang op dockingstation"}},{"id":"FAULT_RETURN_TO_DOCK","title":{"en":"Fault retuning to dock","nl":"Fout bij terugkeren naar dockingstation"}},{"id":"FAULT_RUNNING_DIAGNOSTIC","title":{"en":"Fault - running diagnostic","nl":"Fout - diagnostiek wordt uitgevoerd"}},{"id":"FAULT_USER_RECOVERABLE","title":{"en":"User recoverable fault","nl":"Door gebruiker te herstellen fout"}},{"id":"FULL_CLEAN_ABANDONED","title":{"en":"Full clean abandoned","nl":"Volledige schoonmaak opgegeven"}},{"id":"FULL_CLEAN_ABORTED","title":{"en":"Full clean abandoned","nl":"Volledige schoonmaak afgebroken"}},{"id":"FULL_CLEAN_CHARGING","title":{"en":"Full clean - charging","nl":"Volledige schoonmaak - aan het opladen"}},{"id":"FULL_CLEAN_DISCOVERING","title":{"en":"Full clean - discovering","nl":"Vollige schoonmaak - aan het ontdekken"}},{"id":"FULL_CLEAN_FINISHED","title":{"en":"Full clean finished","nl":"Volledige schoonmaak afgerond"}},{"id":"FULL_CLEAN_INITIATED","title":{"en":"Full clean initiated","nl":"Volledige schoonmaak afgerond"}},{"id":"FULL_CLEAN_NEEDS_CHARGE","title":{"en":"Full clean - needs charge","nl":"Volledige schoonmaak - opladen benodigd"}},{"id":"FULL_CLEAN_PAUSED","title":{"en":"Full clean - paused","nl":"Volledige schoonmaak - gepauzeerd"}},{"id":"FULL_CLEAN_RUNNING","title":{"en":"Full clean - running","nl":"Volledige schoonmaak - bezig"}},{"id":"FULL_CLEAN_TRAVERSING","title":{"en":"Full clean - traversing","nl":"Volledige schoonmaak - oversteken"}},{"id":"INACTIVE_CHARGED","title":{"en":"Inactive - charged","nl":"Inactief - opgeladen"}},{"id":"INACTIVE_CHARGING","title":{"en":"Inactive - charging","nl":"Inactief - aan het opladen"}},{"id":"INACTIVE_DISCHARGING","title":{"en":"Inactive - discharging","nl":"Inactief - aan het ontladen"}},{"id":"MAPPING_ABORTED","title":{"en":"Mapping aborted","nl":"In kaart brengen afgebroken"}},{"id":"MAPPING_CHARGING","title":{"en":"Mapping - charging","nl":"In kaart brengen - opladen"}},{"id":"MAPPING_FINISHED","title":{"en":"Mapping finished","nl":"In kaart brengen afgerond"}},{"id":"MAPPING_INITIATED","title":{"en":"Mapping - initiated","nl":"In kaart brengen - gestart"}},{"id":"MAPPING_NEEDS_CHARGE","title":{"en":"Mapping - needs charge","nl":"In kaart brengen - opladen benodigd"}},{"id":"MAPPING_PAUSED","title":{"en":"Mapping - paused","nl":"In kaart brengen - gepauzeerd"}},{"id":"MAPPING_RUNNING","title":{"en":"Mapping - running","nl":"In kaart brengen - bezig"}}]},"less_air":{"type":"boolean","title":{"en":"Less air","nl":"Minder lucht"},"getable":false,"setable":true,"uiComponent":"button"},"measure_air_quality":{"title":{"en":"Air Quality","nl":"Luchtkwaliteit"},"setable":false,"getable":true,"type":"number","units":{"en":"%"},"uiComponent":"sensor"},"more_air":{"type":"boolean","title":{"en":"More air","nl":"Meer lucht"},"getable":false,"setable":true,"uiComponent":"button"},"night_mode":{"type":"boolean","title":{"en":"Night mode","nl":"Nachtstand"},"getable":true,"setable":true,"uiComponent":"button","icon":"/assets/capabilities/moon.svg"},"oscillate":{"type":"boolean","title":{"en":"Oscillate","nl":"Draaien"},"getable":true,"setable":true,"uiComponent":"button","icon":"/assets/capabilities/oscillate.svg"},"vacuum_charging":{"type":"boolean","getable":true,"setable":false,"uiComponent":"sensor","icon":"/assets/capabilities/charging.svg","title":{"en":"Charging","nl":"Aan het opladen"}},"vacuum_program_state":{"type":"boolean","getable":true,"setable":true,"uiQuickAction":true,"uiComponent":"toggle","title":{"en":"Paused","nl":"Gepauzeerd"}}},"signals":{"ir":{"dyson_am":{"type":"prontohex","cmds":{"ON":"0000 006d 0022 0000 0054 001f 001c 003c 001c 001f 001c 003c 001c 001f 001c 001f 001c 001f 001c 001f 001c 0021 001c 0020 001c 0020 001c 0020 001c 0020 001c 0020 001c 003d 001c 003d 001c 0f7f 0054 001f 001c 003c 001c 001f 001c 003c 001c 001f 001c 001f 001c 001f 001c 001f 001c 0021 001c 0020 001c 0020 001c 0020 001c 0020 001c 0020 001c 003d 001c 003d 001c 001f","OFF":"0000 006d 0022 0000 0054 001f 001c 003c 001c 001f 001c 003c 001c 001f 001c 001f 001c 001f 001c 001f 001c 0021 001c 0020 001c 0020 001c 0020 001c 0020 001c 0020 001c 001f 001c 001f 001c 0f80 0054 001f 001c 003c 001c 001f 001c 003c 001c 001f 001c 001f 001c 001f 001c 001f 001c 0021 001c 0020 001c 0020 001c 0020 001c 0020 001c 0020 001c 001f 001c 001f 001c 001f","OSCILLATE_OFF":"0000 006d 0022 0000 0054 001f 001c 003c 001c 001f 001c 003c 001c 001f 001c 001f 001c 001f 001c 001f 001c 003e 001c 0020 001c 003d 001c 0020 001c 003d 001c 0020 001c 001f 001c 001f 001c 0f7e 0054 001f 001c 003c 001c 001f 001c 003c 001c 001f 001c 001f 001c 001f 001c 001f 001c 003e 001c 0020 001c 003d 001c 0020 001c 003d 001c 0020 001c 001f 001c 001f 001c 001f","OSCILLATE_ON":"0000 006d 0022 0000 0054 001f 001c 003c 001c 001f 001c 003c 001c 001f 001c 001f 001c 001f 001c 001f 001c 003e 001c 0020 001c 003d 001c 0020 001c 003d 001c 0020 001c 003d 001c 003c 001c 0f7e 0054 001e 001c 003c 001c 001f 001c 003c 001c 001f 001c 001f 001c 001f 001c 001f 001c 003e 001c 0020 001c 003d 001c 0020 001c 003d 001c 0020 001c 003d 001c 003c 001c 001f","LESS_AIR":"0000 006d 0022 0000 0054 001f 001c 003c 001c 001f 001c 003c 001c 001f 001c 001f 001c 001f 001c 001f 001c 003e 001c 003e 001c 003d 001c 003d 001c 003d 001c 003d 001c 001f 001c 001f 001c 0f80 0054 001f 001c 003c 001c 001f 001c 003c 001c 001f 001c 001f 001c 001f 001c 001f 001c 003e 001c 003e 001c 003d 001c 003d 001c 003d 001c 003d 001c 001f 001c 001f 001c 001f","MORE_AIR":"0000 006d 0022 0000 0054 001f 001c 003c 001c 001f 001c 003c 001c 001f 001c 001f 001c 001f 001c 001f 001c 0021 001c 003e 001c 0020 001c 003d 001c 0020 001c 003d 001c 001f 001c 003d 001c 0f7f 0054 001f 001c 003c 001c 001f 001c 003c 001c 001f 001c 001f 001c 001f 001c 001f 001c 0021 001c 003e 001c 0020 001c 003d 001c 0020 001c 003d 001c 001f 001c 003c 001c 001f"}}}}}
+{
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
+  "id": "com.dyson",
+  "sdk": 3,
+  "name": {
+    "en": "Dyson"
+  },
+  "brandColor": "#522A86",
+  "description": {
+    "en": "Make It Your Cool Home",
+    "nl": "Make It Your Cool Home"
+  },
+  "category": "appliances",
+  "tags": {
+    "en": [
+      "dyson",
+      "air multiplier",
+      "fan",
+      "vacuum"
+    ],
+    "nl": [
+      "dyson",
+      "air multiplier",
+      "ventilator",
+      "stofzuiger"
+    ]
+  },
+  "version": "5.5.0",
+  "compatibility": ">=5.0.0",
+  "author": {
+    "name": "Athom B.V."
+  },
+  "permissions": [
+    "homey:wireless:ir"
+  ],
+  "images": {
+    "large": "/assets/images/large.png",
+    "small": "/assets/images/small.png"
+  },
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "support": "https://support.athom.com/hc/en-us/requests/new",
+  "flow": {
+    "triggers": [
+      {
+        "id": "heuristic_vacuum_state_changed",
+        "title": {
+          "en": "State changed",
+          "nl": "Status veranderd"
+        },
+        "tokens": [
+          {
+            "name": "heuristic_vacuum_state",
+            "type": "string",
+            "title": {
+              "en": "State",
+              "nl": "Status"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dyson_360_heuristic"
+          }
+        ]
+      },
+      {
+        "id": "heuristic_vacuum_power_mode_changed",
+        "title": {
+          "en": "Power mode changed",
+          "nl": "Vermogensmodus veranderd"
+        },
+        "tokens": [
+          {
+            "name": "heuristic_vacuum_power_mode",
+            "type": "string",
+            "title": {
+              "en": "Mode",
+              "nl": "Modus"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dyson_360_heuristic"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "dyson_heuristic_abort",
+        "title": {
+          "en": "Abort program",
+          "nl": "Beëindig programma"
+        },
+        "hint": {
+          "en": "Stop the current cleaning operation.",
+          "nl": "Beëindig de huidige operatie."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dyson_360_heuristic"
+          }
+        ]
+      },
+      {
+        "id": "dyson_heuristic_pause",
+        "title": {
+          "en": "Pause program",
+          "nl": "Pauzeer programma"
+        },
+        "hint": {
+          "en": "Pause the current cleaning operation.",
+          "nl": "Pauzeer de huidige operatie."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dyson_360_heuristic"
+          }
+        ]
+      },
+      {
+        "id": "dyson_heuristic_resume",
+        "title": {
+          "en": "Resume program",
+          "nl": "Hervat programma"
+        },
+        "hint": {
+          "en": "Resume the current cleaning operation.",
+          "nl": "Hervat de huidige operatie."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dyson_360_heuristic"
+          }
+        ]
+      },
+      {
+        "id": "dyson_heuristic_start_all",
+        "title": {
+          "en": "Clean all zones",
+          "nl": "Reinig alle zones"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dyson_360_heuristic"
+          }
+        ]
+      },
+      {
+        "id": "dyson_heuristic_set_default_power_mode",
+        "title": {
+          "en": "Set default power mode to...",
+          "nl": "Zet standaard vermogensmodus op..."
+        },
+        "titleFormatted": {
+          "en": "Set default power mode to [[mode]]",
+          "nl": "Zet standaard vermogensmodus op [[mode]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dyson_360_heuristic"
+          },
+          {
+            "name": "mode",
+            "title": {
+              "en": "Mode",
+              "nl": "Modus"
+            },
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "quiet",
+                "label": {
+                  "en": "Quiet",
+                  "nl": "Stil"
+                }
+              },
+              {
+                "id": "high",
+                "label": {
+                  "en": "High",
+                  "nl": "Hoog"
+                }
+              },
+              {
+                "id": "max",
+                "label": {
+                  "en": "Max",
+                  "nl": "Max"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "dyson_am_oscillate",
+        "title": {
+          "en": "Toggle oscillation",
+          "nl": "Schakel draaien aan of uit"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dyson_am"
+          }
+        ]
+      },
+      {
+        "id": "dyson_am_more_air",
+        "title": {
+          "en": "Increase air speed",
+          "nl": "Verhoog luchtsnelheid"
+        },
+        "titleFormatted": {
+          "en": "Increase air speed by [[amount]] steps",
+          "nl": "Verhoog luchtsnelheid met [[amount]] stappen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dyson_am"
+          },
+          {
+            "name": "amount",
+            "title": {
+              "en": "Amount",
+              "nl": "Aantal"
+            },
+            "type": "number",
+            "min": 1,
+            "max": 10,
+            "step": 1,
+            "placeholder": {
+              "en": "Steps",
+              "nl": "Standen"
+            }
+          }
+        ]
+      },
+      {
+        "id": "dyson_am_less_air",
+        "title": {
+          "en": "Decrease air speed",
+          "nl": "Verlaag luchtsnelheid"
+        },
+        "titleFormatted": {
+          "en": "Decrease air speed by [[amount]] steps",
+          "nl": "Verlaag luchtsnelheid met [[amount]] stappen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dyson_am"
+          },
+          {
+            "name": "amount",
+            "title": {
+              "en": "Amount",
+              "nl": "Aantal"
+            },
+            "type": "number",
+            "min": 1,
+            "max": 10,
+            "step": 1,
+            "placeholder": {
+              "en": "Steps",
+              "nl": "Standen"
+            }
+          }
+        ]
+      },
+      {
+        "id": "dyson_link_oscillate_true",
+        "title": {
+          "en": "Turn oscillation on",
+          "nl": "Zet draaien aan"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dyson_link_fan"
+          }
+        ]
+      },
+      {
+        "id": "dyson_link_oscillate_false",
+        "title": {
+          "en": "Turn oscillation off",
+          "nl": "Zet draaien uit"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dyson_link_fan"
+          }
+        ]
+      },
+      {
+        "id": "dyson_link_auto_true",
+        "title": {
+          "en": "Turn auto-mode on",
+          "nl": "Zet auto-modus aan"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dyson_link_fan"
+          }
+        ]
+      },
+      {
+        "id": "dyson_link_auto_false",
+        "title": {
+          "en": "Turn auto-mode off",
+          "nl": "Zet auto-modus uit"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dyson_link_fan"
+          }
+        ]
+      },
+      {
+        "id": "dyson_link_airflow_direction",
+        "title": {
+          "en": "Set airflow direction",
+          "nl": "Zet luchtrichting"
+        },
+        "titleFormatted": {
+          "en": "Set airflow direction to [[airflow_direction]]",
+          "nl": "Zet luchtrichting naar [[airflow_direction]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dyson_link_fan"
+          },
+          {
+            "name": "airflow_direction",
+            "type": "dropdown",
+            "title": {
+              "en": "Airflow direction",
+              "nl": "Luchtrichting"
+            },
+            "values": [
+              {
+                "id": "FORWARD",
+                "label": {
+                  "en": "Forward",
+                  "nl": "Naar voren"
+                }
+              },
+              {
+                "id": "BACKWARD",
+                "label": {
+                  "en": "Backward",
+                  "nl": "Naar achteren"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "dyson_link_fan_speed",
+        "title": {
+          "en": "Set fan speed",
+          "nl": "Zet snelheid"
+        },
+        "titleFormatted": {
+          "en": "Set fan speed to [[fan_speed]]",
+          "nl": "Zet snelheid naar [[fan_speed]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dyson_link_fan"
+          },
+          {
+            "name": "fan_speed",
+            "type": "range",
+            "title": {
+              "en": "Speed",
+              "nl": "Snelheid"
+            },
+            "min": 1,
+            "max": 10,
+            "step": 1,
+            "label": "%",
+            "labelDecimals": 0,
+            "labelMultiplier": 10
+          }
+        ]
+      },
+      {
+        "id": "dyson_link_night_mode_true",
+        "title": {
+          "en": "Turn night mode on",
+          "nl": "Zet nachtstand aan"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dyson_link_fan"
+          }
+        ]
+      },
+      {
+        "id": "dyson_link_night_mode_false",
+        "title": {
+          "en": "Turn night mode off",
+          "nl": "Zet nachtstand uit"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dyson_link_fan"
+          }
+        ]
+      },
+      {
+        "id": "dyson_link_sleep_timer",
+        "title": {
+          "en": "Set timer",
+          "nl": "Zet timer"
+        },
+        "titleFormatted": {
+          "en": "Set timer for [[time]]",
+          "nl": "Zet timer voor [[time]]"
+        },
+        "hint": {
+          "en": "This will turn of the device after the timer expires.",
+          "nl": "Hiermee schakelt het apparaat zichzelf uit nadat de timer is afgelopen."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dyson_link_fan"
+          },
+          {
+            "type": "dropdown",
+            "name": "time",
+            "title": {
+              "en": "Timer"
+            },
+            "values": [
+              {
+                "id": "15",
+                "label": {
+                  "en": "15 minutes",
+                  "nl": "15 minuten"
+                }
+              },
+              {
+                "id": "30",
+                "label": {
+                  "en": "30 minutes",
+                  "nl": "30 minuten"
+                }
+              },
+              {
+                "id": "45",
+                "label": {
+                  "en": "45 minutes",
+                  "nl": "45 minuten"
+                }
+              },
+              {
+                "id": "60",
+                "label": {
+                  "en": "1 hour",
+                  "nl": "1 uur"
+                }
+              },
+              {
+                "id": "120",
+                "label": {
+                  "en": "2 hours",
+                  "nl": "2 uur"
+                }
+              },
+              {
+                "id": "180",
+                "label": {
+                  "en": "3 hours",
+                  "nl": "3 uur"
+                }
+              },
+              {
+                "id": "240",
+                "label": {
+                  "en": "4 hours",
+                  "nl": "4 uur"
+                }
+              },
+              {
+                "id": "300",
+                "label": {
+                  "en": "5 hours",
+                  "nl": "5 uur"
+                }
+              },
+              {
+                "id": "360",
+                "label": {
+                  "en": "6 hours",
+                  "nl": "6 uur"
+                }
+              },
+              {
+                "id": "420",
+                "label": {
+                  "en": "7 hours",
+                  "nl": "7 uur"
+                }
+              },
+              {
+                "id": "480",
+                "label": {
+                  "en": "8 hours",
+                  "nl": "8 uur"
+                }
+              },
+              {
+                "id": "540",
+                "label": {
+                  "en": "9 hours",
+                  "nl": "9 uur"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "drivers": [
+    {
+      "name": {
+        "en": "Dyson 360 Heuristic"
+      },
+      "class": "vacuumcleaner",
+      "platforms": [
+        "local",
+        "cloud"
+      ],
+      "capabilities": [
+        "measure_battery",
+        "vacuum_charging",
+        "vacuum_program_state",
+        "heuristic_vacuum_state",
+        "heuristic_vacuum_power_mode",
+        "heuristic_vacuum_pause",
+        "heuristic_vacuum_resume",
+        "heuristic_vacuum_clean_all",
+        "heuristic_vacuum_abort"
+      ],
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
+      },
+      "images": {
+        "large": "/drivers/dyson_360_heuristic/assets/images/large.jpg",
+        "small": "/drivers/dyson_360_heuristic/assets/images/small.jpg"
+      },
+      "connectivity": [
+        "cloud"
+      ],
+      "pair": [
+        {
+          "id": "login_credentials",
+          "template": "login_credentials",
+          "options": {
+            "logo": "logo.png"
+          }
+        },
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "length": 6,
+            "type": "number",
+            "title": {
+              "en": "Enter your 2FA code. This can usually be found in your e-mail."
+            }
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "login_credentials",
+          "template": "login_credentials",
+          "options": {
+            "logo": "logo.png"
+          }
+        },
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "length": 6,
+            "type": "number",
+            "title": {
+              "en": "Enter your 2FA code. This can usually be found in your e-mail."
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "id": "dyson_360_heuristic",
+      "settings": [
+        {
+          "id": "default_power_mode",
+          "type": "dropdown",
+          "value": "quiet",
+          "label": {
+            "en": "Default power mode",
+            "nl": "Standaard vermogensmodus"
+          },
+          "values": [
+            {
+              "id": "quiet",
+              "label": {
+                "en": "Quiet",
+                "nl": "Stil"
+              }
+            },
+            {
+              "id": "high",
+              "label": {
+                "en": "High",
+                "nl": "Hoog"
+              }
+            },
+            {
+              "id": "max",
+              "label": {
+                "en": "Max",
+                "nl": "Max"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "en": "Dyson Cool",
+        "nl": "Dyson Cool"
+      },
+      "class": "fan",
+      "capabilities": [
+        "onoff",
+        "oscillate",
+        "more_air",
+        "less_air"
+      ],
+      "connectivity": [
+        "infrared"
+      ],
+      "pair": [
+        {
+          "id": "add"
+        }
+      ],
+      "images": {
+        "large": "/drivers/dyson_am/assets/images/large.jpg",
+        "small": "/drivers/dyson_am/assets/images/small.jpg"
+      },
+      "platforms": [
+        "local",
+        "cloud"
+      ],
+      "id": "dyson_am"
+    },
+    {
+      "name": {
+        "en": "Dyson Link"
+      },
+      "class": "fan",
+      "platforms": [
+        "local",
+        "cloud"
+      ],
+      "capabilities": [
+        "onoff",
+        "oscillate",
+        "auto",
+        "fan_speed",
+        "measure_temperature",
+        "measure_humidity",
+        "night_mode"
+      ],
+      "images": {
+        "large": "/drivers/dyson_link_fan/assets/images/large.jpg",
+        "small": "/drivers/dyson_link_fan/assets/images/small.jpg"
+      },
+      "connectivity": [
+        "cloud"
+      ],
+      "pair": [
+        {
+          "id": "login_credentials",
+          "template": "login_credentials",
+          "options": {
+            "logo": "logo.png"
+          }
+        },
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "length": 6,
+            "type": "number",
+            "title": {
+              "en": "Enter your 2FA code. This can usually be found in your e-mail."
+            }
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "login_credentials",
+          "template": "login_credentials",
+          "options": {
+            "logo": "logo.png"
+          }
+        },
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "length": 6,
+            "type": "number",
+            "title": {
+              "en": "Enter your 2FA code. This can usually be found in your e-mail."
+            }
+          }
+        },
+        {
+          "id": "done",
+          "template": "done"
+        }
+      ],
+      "id": "dyson_link_fan"
+    }
+  ],
+  "capabilities": {
+    "airflow_direction": {
+      "type": "enum",
+      "title": {
+        "en": "Airflow direction",
+        "nl": "Richting"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "picker",
+      "values": [
+        {
+          "id": "FORWARD",
+          "title": {
+            "en": "Forward",
+            "nl": "Naar voren"
+          }
+        },
+        {
+          "id": "BACKWARD",
+          "title": {
+            "en": "Backward",
+            "nl": "Naar achteren"
+          }
+        }
+      ]
+    },
+    "auto": {
+      "type": "boolean",
+      "title": {
+        "en": "Auto",
+        "nl": "Auto"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "button"
+    },
+    "fan_speed": {
+      "title": {
+        "en": "Fan Speed",
+        "nl": "Snelheid"
+      },
+      "setable": true,
+      "getable": true,
+      "type": "number",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "uiComponent": "slider",
+      "insights": false
+    },
+    "heuristic_vacuum_abort": {
+      "type": "boolean",
+      "getable": false,
+      "setable": true,
+      "uiComponent": "button",
+      "title": {
+        "en": "Abort program",
+        "nl": "Beeïndig programma"
+      },
+      "uiQuickAction": true
+    },
+    "heuristic_vacuum_clean_all": {
+      "type": "boolean",
+      "getable": false,
+      "setable": true,
+      "uiComponent": "button",
+      "title": {
+        "en": "Clean all zones",
+        "nl": "Reinig alle zones"
+      },
+      "uiQuickAction": true
+    },
+    "heuristic_vacuum_pause": {
+      "type": "boolean",
+      "getable": false,
+      "setable": true,
+      "uiComponent": "button",
+      "title": {
+        "en": "Pause program",
+        "nl": "Pauzeer programma"
+      },
+      "uiQuickAction": true
+    },
+    "heuristic_vacuum_power_mode": {
+      "type": "enum",
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/vacuum-power-mode.svg",
+      "title": {
+        "en": "Vacuum power mode",
+        "nl": "Vermogensmodus"
+      },
+      "values": [
+        {
+          "id": "quiet",
+          "title": {
+            "en": "Quiet",
+            "nl": "Stil"
+          }
+        },
+        {
+          "id": "high",
+          "title": {
+            "en": "High",
+            "nl": "Hoog"
+          }
+        },
+        {
+          "id": "max",
+          "title": {
+            "en": "Max",
+            "nl": "Max"
+          }
+        }
+      ]
+    },
+    "heuristic_vacuum_resume": {
+      "type": "boolean",
+      "getable": false,
+      "setable": true,
+      "uiComponent": "button",
+      "title": {
+        "en": "Resume program",
+        "nl": "Hervat programma"
+      },
+      "uiQuickAction": true
+    },
+    "heuristic_vacuum_state": {
+      "type": "enum",
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/vacuum-cleaner-state.svg",
+      "title": {
+        "en": "Vacuum cleaner state",
+        "nl": "Stofzuigerstatus"
+      },
+      "values": [
+        {
+          "id": "FAULT_CALL_HELPLINE",
+          "title": {
+            "en": "Fault - call helpline",
+            "nl": "Fout - bel hulplijn"
+          }
+        },
+        {
+          "id": "FAULT_CONTACT_HELPLINE",
+          "title": {
+            "en": "Fault - contact helpline",
+            "nl": "Fout - neem contact op met de hulplijn"
+          }
+        },
+        {
+          "id": "FAULT_CRITICAL",
+          "title": {
+            "en": "Critical fault",
+            "nl": "Kritieke fout"
+          }
+        },
+        {
+          "id": "FAULT_GETTING_INFO",
+          "title": {
+            "en": "Fault getting info",
+            "nl": "Fout bij ophalen informatie"
+          }
+        },
+        {
+          "id": "FAULT_LOST",
+          "title": {
+            "en": "Fault - lost",
+            "nl": "Fout - verloren"
+          }
+        },
+        {
+          "id": "FAULT_ON_DOCK",
+          "title": {
+            "en": "Fault on dock",
+            "nl": "Fout op dockingstation"
+          }
+        },
+        {
+          "id": "FAULT_ON_DOCK_CHARGED",
+          "title": {
+            "en": "Fault on dock, charged",
+            "nl": "Fout op dockingstation, opgeladen"
+          }
+        },
+        {
+          "id": "FAULT_ON_DOCK_CHARGING",
+          "title": {
+            "en": "Fault on dock, charging",
+            "nl": "Fout op dockingstation, aan het opladen"
+          }
+        },
+        {
+          "id": "FAULT_REPLACE_ON_DOCK",
+          "title": {
+            "en": "Fault - replace on dock",
+            "nl": "Fout - vervang op dockingstation"
+          }
+        },
+        {
+          "id": "FAULT_RETURN_TO_DOCK",
+          "title": {
+            "en": "Fault retuning to dock",
+            "nl": "Fout bij terugkeren naar dockingstation"
+          }
+        },
+        {
+          "id": "FAULT_RUNNING_DIAGNOSTIC",
+          "title": {
+            "en": "Fault - running diagnostic",
+            "nl": "Fout - diagnostiek wordt uitgevoerd"
+          }
+        },
+        {
+          "id": "FAULT_USER_RECOVERABLE",
+          "title": {
+            "en": "User recoverable fault",
+            "nl": "Door gebruiker te herstellen fout"
+          }
+        },
+        {
+          "id": "FULL_CLEAN_ABANDONED",
+          "title": {
+            "en": "Full clean abandoned",
+            "nl": "Volledige schoonmaak opgegeven"
+          }
+        },
+        {
+          "id": "FULL_CLEAN_ABORTED",
+          "title": {
+            "en": "Full clean abandoned",
+            "nl": "Volledige schoonmaak afgebroken"
+          }
+        },
+        {
+          "id": "FULL_CLEAN_CHARGING",
+          "title": {
+            "en": "Full clean - charging",
+            "nl": "Volledige schoonmaak - aan het opladen"
+          }
+        },
+        {
+          "id": "FULL_CLEAN_DISCOVERING",
+          "title": {
+            "en": "Full clean - discovering",
+            "nl": "Vollige schoonmaak - aan het ontdekken"
+          }
+        },
+        {
+          "id": "FULL_CLEAN_FINISHED",
+          "title": {
+            "en": "Full clean finished",
+            "nl": "Volledige schoonmaak afgerond"
+          }
+        },
+        {
+          "id": "FULL_CLEAN_INITIATED",
+          "title": {
+            "en": "Full clean initiated",
+            "nl": "Volledige schoonmaak afgerond"
+          }
+        },
+        {
+          "id": "FULL_CLEAN_NEEDS_CHARGE",
+          "title": {
+            "en": "Full clean - needs charge",
+            "nl": "Volledige schoonmaak - opladen benodigd"
+          }
+        },
+        {
+          "id": "FULL_CLEAN_PAUSED",
+          "title": {
+            "en": "Full clean - paused",
+            "nl": "Volledige schoonmaak - gepauzeerd"
+          }
+        },
+        {
+          "id": "FULL_CLEAN_RUNNING",
+          "title": {
+            "en": "Full clean - running",
+            "nl": "Volledige schoonmaak - bezig"
+          }
+        },
+        {
+          "id": "FULL_CLEAN_TRAVERSING",
+          "title": {
+            "en": "Full clean - traversing",
+            "nl": "Volledige schoonmaak - oversteken"
+          }
+        },
+        {
+          "id": "INACTIVE_CHARGED",
+          "title": {
+            "en": "Inactive - charged",
+            "nl": "Inactief - opgeladen"
+          }
+        },
+        {
+          "id": "INACTIVE_CHARGING",
+          "title": {
+            "en": "Inactive - charging",
+            "nl": "Inactief - aan het opladen"
+          }
+        },
+        {
+          "id": "INACTIVE_DISCHARGING",
+          "title": {
+            "en": "Inactive - discharging",
+            "nl": "Inactief - aan het ontladen"
+          }
+        },
+        {
+          "id": "MAPPING_ABORTED",
+          "title": {
+            "en": "Mapping aborted",
+            "nl": "In kaart brengen afgebroken"
+          }
+        },
+        {
+          "id": "MAPPING_CHARGING",
+          "title": {
+            "en": "Mapping - charging",
+            "nl": "In kaart brengen - opladen"
+          }
+        },
+        {
+          "id": "MAPPING_FINISHED",
+          "title": {
+            "en": "Mapping finished",
+            "nl": "In kaart brengen afgerond"
+          }
+        },
+        {
+          "id": "MAPPING_INITIATED",
+          "title": {
+            "en": "Mapping - initiated",
+            "nl": "In kaart brengen - gestart"
+          }
+        },
+        {
+          "id": "MAPPING_NEEDS_CHARGE",
+          "title": {
+            "en": "Mapping - needs charge",
+            "nl": "In kaart brengen - opladen benodigd"
+          }
+        },
+        {
+          "id": "MAPPING_PAUSED",
+          "title": {
+            "en": "Mapping - paused",
+            "nl": "In kaart brengen - gepauzeerd"
+          }
+        },
+        {
+          "id": "MAPPING_RUNNING",
+          "title": {
+            "en": "Mapping - running",
+            "nl": "In kaart brengen - bezig"
+          }
+        }
+      ]
+    },
+    "less_air": {
+      "type": "boolean",
+      "title": {
+        "en": "Less air",
+        "nl": "Minder lucht"
+      },
+      "getable": false,
+      "setable": true,
+      "uiComponent": "button"
+    },
+    "measure_air_quality": {
+      "title": {
+        "en": "Air Quality",
+        "nl": "Luchtkwaliteit"
+      },
+      "setable": false,
+      "getable": true,
+      "type": "number",
+      "units": {
+        "en": "%"
+      },
+      "uiComponent": "sensor"
+    },
+    "more_air": {
+      "type": "boolean",
+      "title": {
+        "en": "More air",
+        "nl": "Meer lucht"
+      },
+      "getable": false,
+      "setable": true,
+      "uiComponent": "button"
+    },
+    "night_mode": {
+      "type": "boolean",
+      "title": {
+        "en": "Night mode",
+        "nl": "Nachtstand"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "button",
+      "icon": "/assets/capabilities/moon.svg"
+    },
+    "oscillate": {
+      "type": "boolean",
+      "title": {
+        "en": "Oscillate",
+        "nl": "Draaien"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "button",
+      "icon": "/assets/capabilities/oscillate.svg"
+    },
+    "vacuum_charging": {
+      "type": "boolean",
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/charging.svg",
+      "title": {
+        "en": "Charging",
+        "nl": "Aan het opladen"
+      }
+    },
+    "vacuum_program_state": {
+      "type": "boolean",
+      "getable": true,
+      "setable": true,
+      "uiQuickAction": true,
+      "uiComponent": "toggle",
+      "title": {
+        "en": "Paused",
+        "nl": "Gepauzeerd"
+      }
+    }
+  },
+  "signals": {
+    "ir": {
+      "dyson_am": {
+        "type": "prontohex",
+        "cmds": {
+          "ON": "0000 006d 0022 0000 0054 001f 001c 003c 001c 001f 001c 003c 001c 001f 001c 001f 001c 001f 001c 001f 001c 0021 001c 0020 001c 0020 001c 0020 001c 0020 001c 0020 001c 003d 001c 003d 001c 0f7f 0054 001f 001c 003c 001c 001f 001c 003c 001c 001f 001c 001f 001c 001f 001c 001f 001c 0021 001c 0020 001c 0020 001c 0020 001c 0020 001c 0020 001c 003d 001c 003d 001c 001f",
+          "OFF": "0000 006d 0022 0000 0054 001f 001c 003c 001c 001f 001c 003c 001c 001f 001c 001f 001c 001f 001c 001f 001c 0021 001c 0020 001c 0020 001c 0020 001c 0020 001c 0020 001c 001f 001c 001f 001c 0f80 0054 001f 001c 003c 001c 001f 001c 003c 001c 001f 001c 001f 001c 001f 001c 001f 001c 0021 001c 0020 001c 0020 001c 0020 001c 0020 001c 0020 001c 001f 001c 001f 001c 001f",
+          "OSCILLATE_OFF": "0000 006d 0022 0000 0054 001f 001c 003c 001c 001f 001c 003c 001c 001f 001c 001f 001c 001f 001c 001f 001c 003e 001c 0020 001c 003d 001c 0020 001c 003d 001c 0020 001c 001f 001c 001f 001c 0f7e 0054 001f 001c 003c 001c 001f 001c 003c 001c 001f 001c 001f 001c 001f 001c 001f 001c 003e 001c 0020 001c 003d 001c 0020 001c 003d 001c 0020 001c 001f 001c 001f 001c 001f",
+          "OSCILLATE_ON": "0000 006d 0022 0000 0054 001f 001c 003c 001c 001f 001c 003c 001c 001f 001c 001f 001c 001f 001c 001f 001c 003e 001c 0020 001c 003d 001c 0020 001c 003d 001c 0020 001c 003d 001c 003c 001c 0f7e 0054 001e 001c 003c 001c 001f 001c 003c 001c 001f 001c 001f 001c 001f 001c 001f 001c 003e 001c 0020 001c 003d 001c 0020 001c 003d 001c 0020 001c 003d 001c 003c 001c 001f",
+          "LESS_AIR": "0000 006d 0022 0000 0054 001f 001c 003c 001c 001f 001c 003c 001c 001f 001c 001f 001c 001f 001c 001f 001c 003e 001c 003e 001c 003d 001c 003d 001c 003d 001c 003d 001c 001f 001c 001f 001c 0f80 0054 001f 001c 003c 001c 001f 001c 003c 001c 001f 001c 001f 001c 001f 001c 001f 001c 003e 001c 003e 001c 003d 001c 003d 001c 003d 001c 003d 001c 001f 001c 001f 001c 001f",
+          "MORE_AIR": "0000 006d 0022 0000 0054 001f 001c 003c 001c 001f 001c 003c 001c 001f 001c 001f 001c 001f 001c 001f 001c 0021 001c 003e 001c 0020 001c 003d 001c 0020 001c 003d 001c 001f 001c 003d 001c 0f7f 0054 001f 001c 003c 001c 001f 001c 003c 001c 001f 001c 001f 001c 001f 001c 001f 001c 0021 001c 003e 001c 0020 001c 003d 001c 0020 001c 003d 001c 001f 001c 003c 001c 001f"
+        }
+      }
+    }
+  }
+}
