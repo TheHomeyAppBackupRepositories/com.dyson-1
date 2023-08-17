@@ -29,9 +29,9 @@ module.exports = class DysonAmDevice extends Homey.Device {
    */
   async onCapabilityOnoff(value) {
     if (value) {
-      await this.signal.cmd('ON');
+      await this.signal.cmd('ON', { device: this });
     } else {
-      await this.signal.cmd('OFF');
+      await this.signal.cmd('OFF', { device: this });
     }
   }
 
@@ -39,20 +39,20 @@ module.exports = class DysonAmDevice extends Homey.Device {
     await this.setCapabilityValue('onoff', true);
 
     if (value) {
-      await this.signal.cmd('OSCILLATE_ON');
+      await this.signal.cmd('OSCILLATE_ON', { device: this });
     } else {
-      await this.signal.cmd('OSCILLATE_OFF');
+      await this.signal.cmd('OSCILLATE_OFF', { device: this });
     }
   }
 
   async onCapabilityMoreAir() {
     await this.setCapabilityValue('onoff', true);
-    await this.signal.cmd('MORE_AIR');
+    await this.signal.cmd('MORE_AIR', { device: this });
   }
 
   async onCapabilityLessAir() {
     await this.setCapabilityValue('onoff', true);
-    await this.signal.cmd('LESS_AIR');
+    await this.signal.cmd('LESS_AIR', { device: this });
   }
 
-}
+};
